@@ -1,0 +1,92 @@
+{
+  "entities": {
+    "users": {
+      "title": "Users",
+      "description": "User profiles and credentials",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "utcTimeCredits": { "type": "number" },
+        "cashBalanceUSD": { "type": "number" }
+      },
+      "required": ["uid", "email"]
+    },
+    "listings": {
+      "title": "Listings",
+      "description": "Marketplace listings for hourly assets and services",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ownerUid": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "commercialModel": { "type": "string" },
+        "hourlyRateUSD": { "type": "number" },
+        "utcCreditsPerHour": { "type": "number" },
+        "location": { "type": "string" },
+        "description": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["ownerUid", "title", "hourlyRateUSD"]
+    },
+    "bids": {
+      "title": "Bids",
+      "description": "Auction bids placed on listings",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "listingId": { "type": "string" },
+        "bidderUid": { "type": "string" },
+        "amountUSD": { "type": "number" },
+        "amountUTC": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["listingId", "bidderUid", "amountUSD"]
+    },
+    "bookings": {
+      "title": "Bookings",
+      "description": "Scheduled bookings and UTC slot reservations",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userUid": { "type": "string" },
+        "listingId": { "type": "string" },
+        "listingTitle": { "type": "string" },
+        "category": { "type": "string" },
+        "dateStr": { "type": "string" },
+        "utcTimeSlot": { "type": "string" },
+        "hoursBooked": { "type": "number" },
+        "utcCreditsDeducted": { "type": "number" },
+        "status": { "type": "string" },
+        "bookingHash": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userUid", "listingId", "hoursBooked"]
+    },
+    "transactions": {
+      "title": "Wallet Transactions",
+      "description": "Financial and time credit transaction ledger",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userUid": { "type": "string" },
+        "type": { "type": "string" },
+        "title": { "type": "string" },
+        "amountUSD": { "type": "number" },
+        "amountUTC": { "type": "number" },
+        "buyerFee5Pct": { "type": "number" },
+        "sellerFee5Pct": { "type": "number" },
+        "totalFeeToPlatform": { "type": "number" },
+        "timestamp": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["userUid", "type", "title"]
+    }
+  }
+}

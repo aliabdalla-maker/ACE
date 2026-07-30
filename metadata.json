@@ -1,0 +1,11 @@
+{
+  "name": "Remix AI Commerce Exchange ",
+  "description": "Multi-sided AI trading marketplace \u0026 universal time credit economy for auctioning, booking, and exchanging hourly services and assets in 40 languages with 5% transaction fees and AdMob integration.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
